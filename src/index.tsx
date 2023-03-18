@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Page } from "./types/types";
+import { DreamTheme } from "./data/dummy-data";
 
 declare global {
   interface Window {
@@ -16,10 +16,8 @@ export type Theme = {
 };
 
 export type BubbleNavOpts = {
-  siteMap?: Page;
-  width?: number;
-  theme?: Theme;
-  showChildren?: boolean;
+  data?: DreamTheme[];
+  darkMode?: boolean;
 };
 
 window.embedBubbleNav = function (
@@ -27,24 +25,13 @@ window.embedBubbleNav = function (
   opts: BubbleNavOpts = {}
 ) {
   // const params = qs.parse(window.location.search.slice(1));
-  const { siteMap, width, theme, showChildren } = opts;
-  console.log("width", width);
-  console.log("siteMap", siteMap);
-
-  const navTheme = theme || {
-    primaryColor: "rgba(4,100,128, 1)",
-  };
+  const { data, darkMode } = opts;
 
   const el = document.querySelector(elementId);
   const render = () =>
     ReactDOM.render(
       <React.StrictMode>
-        <App
-          siteMap={siteMap}
-          width={width}
-          theme={navTheme}
-          showChildren={Boolean(showChildren)}
-        />
+        <App data={data} darkMode={darkMode} />
       </React.StrictMode>,
       el
     );

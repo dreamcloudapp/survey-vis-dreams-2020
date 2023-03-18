@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.App__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 p.child-card__page-label {
@@ -11,4 +19,63 @@ p.child-card__page-label {
 
 button.child-card__button {
   padding: 10px 10px;
+}
+
+.button-circle-with-two-clickable-halves button {
+  cursor: pointer;
+}
+
+.button-circle-with-two-clickable-halves__label {
+  cursor: pointer;
+  max-width: 200px;
+  display: block;
+  height: 50px;
+  /* background-color: antiquewhite; */
+}
+
+.button-circle-with-two-clickable-halves__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+}
+
+.App__selected-theme {
+  font-size: 1.2rem;
+}
+
+.App__selected-theme__intro {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.App__dream-snippets li {
+  text-align: left;
+}
+
+.reset-button {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #000;
+  border-radius: 0%;
+  background-color: #fff;
+  color: #000;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App__reset-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background-color: #ccc;
 }
