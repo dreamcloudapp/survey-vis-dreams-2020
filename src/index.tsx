@@ -7,7 +7,7 @@ import { DreamTheme } from "./data/dummy-data";
 
 declare global {
   interface Window {
-    embedBubbleNav: Function;
+    embedSurveyVis: Function;
   }
 }
 
@@ -20,7 +20,7 @@ export type BubbleNavOpts = {
   darkMode?: boolean;
 };
 
-window.embedBubbleNav = function (
+window.embedSurveyVis = function (
   elementId: keyof HTMLElementTagNameMap,
   opts: BubbleNavOpts = {}
 ) {
