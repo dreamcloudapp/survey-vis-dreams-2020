@@ -30,6 +30,7 @@ button.child-card__button {
   max-width: 200px;
   display: block;
   height: 50px;
+  text-decoration: underline;
   /* background-color: antiquewhite; */
 }
 

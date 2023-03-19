@@ -102,7 +102,7 @@ function App({ data, darkMode }: AppProps) {
 
       <div className="App__selected-theme">
         <h3 className="App__selected-theme__name">
-          <span>{selectedTheme || "Dream Snippets"}</span>
+          <span>{selectedTheme || "Dreams"}</span>
           {selectedGender && (
             <span style={{ marginLeft: 10 }}>
               {selectedGender === "M" ? "(Male dreams)" : "(Female dreams)"}
@@ -153,6 +153,9 @@ const semiCircleStyle = {
   marginBottom: 50,
 };
 
+const MALE_COLOR = "#90CACA";
+const FEMALE_COLOR = "#B68A07";
+
 function ButtonCircleWithTwoClickableHalves({
   leftText,
   rightText,
@@ -173,12 +176,17 @@ function ButtonCircleWithTwoClickableHalves({
           }}
           style={{
             ...semiCircleStyle,
-            backgroundColor: leftDisabled ? "grey" : "hsl(0, 80%, 60%)",
+            backgroundColor: leftDisabled ? "#BBB" : MALE_COLOR,
             transform: "translate(25%) rotate(270deg)",
             cursor: leftDisabled ? "not-allowed" : "pointer",
           }}
         >
-          <div className="button-circle-with-two-clickable-halves__left-half__inner">
+          <div
+            style={{
+              transform: "rotate(90deg)",
+            }}
+            className="button-circle-with-two-clickable-halves__left-half__inner"
+          >
             <div className="button-circle-with-two-clickable-halves__left-half__inner__text">
               <span>{leftText}</span>
             </div>
@@ -191,13 +199,18 @@ function ButtonCircleWithTwoClickableHalves({
           }}
           style={{
             ...semiCircleStyle,
-            backgroundColor: rightDisabled ? "grey" : "hsl(240, 80%, 60%)",
+            backgroundColor: rightDisabled ? "#BBB" : FEMALE_COLOR,
             transform: "translate(-25%) rotate(90deg)",
             cursor: rightDisabled ? "not-allowed" : "pointer",
           }}
         >
           <div className="button-circle-with-two-clickable-halves__right-half__inner">
-            <div className="button-circle-with-two-clickable-halves__right-half__inner__text">
+            <div
+              style={{
+                transform: "rotate(-90deg)",
+              }}
+              className="button-circle-with-two-clickable-halves__right-half__inner__text"
+            >
               <span>{rightText}</span>
             </div>
           </div>
