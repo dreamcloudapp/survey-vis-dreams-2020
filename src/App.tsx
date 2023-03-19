@@ -58,6 +58,9 @@ function App({ data, darkMode }: AppProps) {
 
   return (
     <div className="App" style={{ width: "100%", paddingTop: 100 }}>
+      <h3 className="App__selected-theme__name">
+        <span>Themes</span>
+      </h3>
       <div className="App__header">
         {themeNames.map((themeName, i) => {
           return (

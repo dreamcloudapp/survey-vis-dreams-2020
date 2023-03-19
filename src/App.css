@@ -45,12 +45,8 @@ button.child-card__button {
   margin-right: 10px;
 }
 
-.App__selected-theme {
-  font-size: 1.2rem;
-}
-
 .App__selected-theme__intro {
-  font-size: 1.1rem;
+  font-size: 16px;
   font-style: italic;
 }
 
@@ -83,4 +79,10 @@ button.child-card__button {
 
 .reset-button:hover {
   background-color: #ccc;
+}
+
+.App__selected-theme__name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 70px;
 }
