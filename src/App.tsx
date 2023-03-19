@@ -15,6 +15,7 @@ function App({ data, darkMode }: AppProps) {
   const dataToUse = data || dummyData;
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
   const [selectedGender, setSelectedGender] = useState<"M" | "F" | null>(null);
+  const filtering = Boolean(selectedTheme || selectedGender);
 
   const dataKeyByTheme = useMemo(() => {
     return dataToUse.reduce((acc, theme) => {
@@ -92,12 +93,14 @@ function App({ data, darkMode }: AppProps) {
         })}
       </div>
       <div className="App__reset-button-container">
-        <ResetButton
-          onClick={() => {
-            setSelectedTheme(null);
-            setSelectedGender(null);
-          }}
-        />
+        {filtering && (
+          <ResetButton
+            onClick={() => {
+              setSelectedTheme(null);
+              setSelectedGender(null);
+            }}
+          />
+        )}
       </div>
 
       <div className="App__selected-theme">
@@ -153,7 +156,7 @@ const semiCircleStyle = {
   marginBottom: 50,
 };
 
-const MALE_COLOR = "#90CACA";
+const MALE_COLOR = "#6FBABA";
 const FEMALE_COLOR = "#B68A07";
 
 function ButtonCircleWithTwoClickableHalves({

@@ -39,8 +39,10 @@ button.child-card__button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 200px;
-  margin-bottom: 40px;
+  width: 150px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .App__selected-theme {
@@ -74,7 +76,8 @@ button.child-card__button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  height: 40px;
   cursor: pointer;
 }
 
