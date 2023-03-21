@@ -182,18 +182,21 @@ function ButtonCircleWithTwoClickableHalves({
           }}
           style={{
             ...semiCircleStyle,
-            backgroundColor: leftDisabled ? "#BBB" : MALE_COLOR,
+            backgroundColor: leftDisabled ? "transparent" : MALE_COLOR,
             transform: "translate(25%) rotate(270deg)",
             cursor: leftDisabled ? "not-allowed" : "pointer",
+            border: leftDisabled ? "1px solid rgb(187, 187, 187)" : "none"
           }}
         >
           <div
-            style={{
-              transform: "rotate(90deg)",
-            }}
+          style={{display: "flex", justifyContent: "center"}} 
             className="button-circle-with-two-clickable-halves__left-half__inner"
           >
-            <div className="button-circle-with-two-clickable-halves__left-half__inner__text">
+            <div style={{
+              transform: "rotate(90deg)",
+              cursor: leftDisabled ? "not-allowed" : "pointer",
+            }}
+            className="button-circle-with-two-clickable-halves__left-half__inner__text">
               <span>{leftText}</span>
             </div>
           </div>
@@ -205,15 +208,17 @@ function ButtonCircleWithTwoClickableHalves({
           }}
           style={{
             ...semiCircleStyle,
-            backgroundColor: rightDisabled ? "#BBB" : FEMALE_COLOR,
+            backgroundColor: rightDisabled ? "transparent" : FEMALE_COLOR,
             transform: "translate(-25%) rotate(90deg)",
             cursor: rightDisabled ? "not-allowed" : "pointer",
+            border: rightDisabled ? "1px solid rgb(187, 187, 187)" : "none"
           }}
         >
-          <div className="button-circle-with-two-clickable-halves__right-half__inner">
+          <div style={{display: "flex", justifyContent: "center"}} className="button-circle-with-two-clickable-halves__right-half__inner">
             <div
               style={{
                 transform: "rotate(-90deg)",
+                cursor: rightDisabled ? "not-allowed" : "pointer",
               }}
               className="button-circle-with-two-clickable-halves__right-half__inner__text"
             >
