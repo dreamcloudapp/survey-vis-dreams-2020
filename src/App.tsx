@@ -11,6 +11,7 @@ type AppProps = {
   darkMode?: boolean;
 };
 
+// Dark mode not used yet
 function App({ data, darkMode }: AppProps) {
   const dataToUse = data || dummyData;
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
@@ -185,18 +186,20 @@ function ButtonCircleWithTwoClickableHalves({
             backgroundColor: leftDisabled ? "transparent" : MALE_COLOR,
             transform: "translate(25%) rotate(270deg)",
             cursor: leftDisabled ? "not-allowed" : "pointer",
-            border: leftDisabled ? "1px solid rgb(187, 187, 187)" : "none"
+            border: leftDisabled ? "1px solid rgb(187, 187, 187)" : "none",
           }}
         >
           <div
-          style={{display: "flex", justifyContent: "center"}} 
+            style={{ display: "flex", justifyContent: "center" }}
             className="button-circle-with-two-clickable-halves__left-half__inner"
           >
-            <div style={{
-              transform: "rotate(90deg)",
-              cursor: leftDisabled ? "not-allowed" : "pointer",
-            }}
-            className="button-circle-with-two-clickable-halves__left-half__inner__text">
+            <div
+              style={{
+                transform: "rotate(90deg)",
+                cursor: leftDisabled ? "not-allowed" : "pointer",
+              }}
+              className="button-circle-with-two-clickable-halves__left-half__inner__text"
+            >
               <span>{leftText}</span>
             </div>
           </div>
@@ -211,10 +214,13 @@ function ButtonCircleWithTwoClickableHalves({
             backgroundColor: rightDisabled ? "transparent" : FEMALE_COLOR,
             transform: "translate(-25%) rotate(90deg)",
             cursor: rightDisabled ? "not-allowed" : "pointer",
-            border: rightDisabled ? "1px solid rgb(187, 187, 187)" : "none"
+            border: rightDisabled ? "1px solid rgb(187, 187, 187)" : "none",
           }}
         >
-          <div style={{display: "flex", justifyContent: "center"}} className="button-circle-with-two-clickable-halves__right-half__inner">
+          <div
+            style={{ display: "flex", justifyContent: "center" }}
+            className="button-circle-with-two-clickable-halves__right-half__inner"
+          >
             <div
               style={{
                 transform: "rotate(-90deg)",
